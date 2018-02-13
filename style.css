@@ -1,0 +1,48 @@
+.hg__header {
+  grid-area: header;
+  background-color: purple;
+}
+.hg__footer {
+  grid-area: footer;
+  background-color: orange;
+}
+.hg__main {
+  grid-area: main;
+  background-color: yellow;
+}
+.hg__left {
+  grid-area: navigation;
+  background-color: green;
+}
+.hg__right {
+  grid-area: ads;
+  background-color: red;
+}
+
+.hg {
+    display: grid;
+    grid-template-areas: "header header header"
+                         "navigation main ads"
+                         "navigation footer footer";
+    grid-template-columns: 15vw 1fr 10vw;
+    grid-template-rows: 10vh
+                        1fr
+                        10vh;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+    .hg {
+        grid-template-areas: "header"
+                             "navigation"
+                             "main"
+                             "ads"
+                             "footer";
+        grid-template-columns: 100vw;
+        grid-template-rows: 100px
+                            50px
+                            1fr
+                            50px
+                            30px;
+    }
+}
